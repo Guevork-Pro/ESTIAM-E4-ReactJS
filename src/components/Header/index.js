@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 const Logo = () => {
   return (
@@ -10,14 +11,14 @@ const Logo = () => {
 
 const Menu = () => {
   return (
-    <div>
-      <ul style={{ display: 'flex', gap: '0 10px', margin: 0 }}>
-        <li style={{ display: 'inline-block' }}>MenuItem</li>
-        <li style={{ display: 'inline-block' }}>MenuItem</li>
-        <li style={{ display: 'inline-block' }}>MenuItem</li>
-        <li style={{ display: 'inline-block' }}>MenuItem</li>
+    <MenuContainer>
+      <ul>
+        <li>MenuItem</li>
+        <li>MenuItem</li>
+        <li>MenuItem</li>
+        <li>MenuItem</li>
       </ul>
-    </div>
+    </MenuContainer>
   )
 }
 
@@ -31,12 +32,31 @@ const User = () => {
 
 const Header = () => {
   return (
-    <header style={{ padding: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <HeaderStyled>
       <Logo />
       <Menu />
       <User />
-    </header>
+    </HeaderStyled>
   );
 }
 
 export default Header;
+
+const HeaderStyled = styled.header`
+  padding: 8px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center ;
+`;
+
+const MenuContainer = styled.div`
+  & > ul {
+    display: flex;
+    gap: 0 10px;
+    margin: 0;
+  }
+
+  & > ul > li {
+    display: inline-block;
+  }
+`;

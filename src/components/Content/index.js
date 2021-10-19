@@ -1,13 +1,14 @@
 import React from "react";
 import Logo from '../../logo.svg'
+import styled from "styled-components";
 
 const Presentation = () => {
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{ display: 'inline-block', width: '50%' }}>
-        <img src={Logo} alt="Appli" style={{ display: 'inline-block' }} />
+    <PresentationContainer>
+      <div>
+        <img src={Logo} alt="Appli"/>
       </div>
-      <div style={{ display: 'inline-block', width: '50%' }}>
+      <div>
         <p>
           Blalbal aofnazoid ananze aofnazoid ananze aofnazoid ananze aofnazoid ananze aofnazoid ananze aofnazoid ananze aofnazoid ananze vvv
         </p>
@@ -18,13 +19,23 @@ const Presentation = () => {
           Blalbal aofnazoid ananze aofnazoid ananze aofnazoid ananze aofnazoid ananze aofnazoid ananze aofnazoid ananze aofnazoid ananze vvv
         </p>
       </div>
-    </div>
+    </PresentationContainer>
   )
 }
 
+const PresentationContainer = styled.div`
+  display: flex; 
+  align-items: center;
+
+  & > div {
+    display: inline-block;
+    width: 50%;
+  }
+`;
+
 const ActionButtons = () => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+    <ActionButtonsContainer>
       <button>
         Réserver
       </button>
@@ -32,21 +43,33 @@ const ActionButtons = () => {
       <button>
         Rejoindre
       </button>
-    </div>
+    </ActionButtonsContainer>
   )
 }
+
+const ActionButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
 
 const RestoCard = () => {
   return (
-    <div style={{ width: '180px', height: '260px', border: '1px solid black', borderRadius: '3px' }}>
+    <RestoCardContainer>
       Pasta
-    </div>
+    </RestoCardContainer>
   )
 }
 
+const RestoCardContainer = styled.div`
+  width: 180px;
+  height: 260px;
+  border: 1px solid black;
+  border-radius: 3px ;
+`;
+
 const RestaurantCards = () => {
   return (
-    <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+    <CardsContainer>
       <RestoCard />
       <RestoCard />
       <RestoCard />
@@ -54,9 +77,15 @@ const RestaurantCards = () => {
       <RestoCard />
       <RestoCard />
       <RestoCard />
-    </div>
+    </CardsContainer>
   )
 }
+
+const CardsContainer = styled.div`
+  display: flex;
+  gap: 24px;
+  flexWrap: wrap;
+`;
 
 const Content = () => {
   return (
