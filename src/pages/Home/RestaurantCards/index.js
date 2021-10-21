@@ -26,6 +26,7 @@ const Container = styled.div`
   gap: 24px;
   flexWrap: wrap;
   justify-content: center;
+  margin-top: 24px;
 `;
 
 export default RestaurantCards

@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const ActionButtons = () => {
+
+const BookOrJoin = (props) => {
   return (
     <Container>
-      <button>
-        Réserver
+      <button onClick={props.clickFunction}> 
+        { props.isBlue ? "Mettre en ROUGE" : "Mettre en BLEU" }
       </button>
 
       <button>
@@ -20,4 +21,4 @@ const Container = styled.div`
   justify-content: space-evenly;
 `;
 
-export default ActionButtons
+export default BookOrJoin
