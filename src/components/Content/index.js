@@ -1,9 +1,28 @@
 import React from "react";
-import { Home } from "../../pages";
+import { Connection, Home, Restaurants } from "../../pages";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
-const Content = () => {
+const Content = ({ setUserToken }) => {
   return (
-    <Home />
+    <Router>
+      <Switch>
+        <Route path="/restaurants" exact>
+          <Restaurants />
+        </Route>
+
+        <Route path="/connect" exact>
+          <Connection setUserToken={setUserToken} />
+        </Route>
+
+        <Route path="/" exact>
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

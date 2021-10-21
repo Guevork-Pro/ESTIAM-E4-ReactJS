@@ -22,20 +22,20 @@ const Menu = () => {
   )
 }
 
-const User = () => {
+const User = ({ userToken }) => {
   return (
     <div>
-      <button>User</button>
+      { !userToken ? "Non-connecté" : "Connecté" }
     </div>
   )
 }
 
-const Header = () => {
+const Header = ({ userToken }) => {
   return (
     <HeaderStyled>
       <Logo />
       <Menu />
-      <User />
+      <User userToken={userToken} />
     </HeaderStyled>
   );
 }

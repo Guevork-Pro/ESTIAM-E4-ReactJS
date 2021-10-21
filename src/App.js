@@ -1,10 +1,13 @@
+import React from 'react';
 import { Content, Footer, Header } from './components';
 
 const App = () => {
+  const [userToken, setUserToken] = React.useState("")
+
   return (
     <div className="appRoot">
-      <Header />
-      <Content />
+      <Header userToken={userToken} />
+      <Content setUserToken={setUserToken} />
       <Footer />
     </div>
   );
